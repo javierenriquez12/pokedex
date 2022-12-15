@@ -61,4 +61,4 @@ If the project starts to grow, it is recommended to use a clean architecture as 
 
 | Min SDK              | Target SDK          | Java     | Kotlin | AGP  |
 |----------------------|---------------------|----------|--------|------|
-| API 26 (Android 5.0) | API 32 (Android 12) | Java 11+ | 1.7.0  | 7.0+ |
+| API 21 (Android 5.0) | API 32 (Android 12) | Java 11+ | 1.7.0  | 7.0+ |
