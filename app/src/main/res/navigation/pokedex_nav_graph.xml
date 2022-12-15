@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/pokedexhost"
+    app:startDestination="@id/pokedexFragment">
+
+    <fragment
+        android:id="@+id/pokedexFragment"
+        android:name="com.nisum.pokedex.PokedexFragment">
+        <action
+            android:id="@+id/action_pokedexFragment_to_pokemonDetailFragment"
+            app:destination="@id/pokemonDetailFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            >
+            <argument android:name="id_pokemon" />
+        </action>
+
+    </fragment>
+    <dialog
+        android:id="@+id/pokemonDetailFragment"
+        android:name="com.nisum.pokedex.detail.PokemonDetailFragment"
+        android:label="fragment_pokedex_detail">
+    </dialog>
+</navigation>

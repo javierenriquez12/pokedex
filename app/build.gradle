@@ -1,0 +1,58 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
+    id 'androidx.navigation.safeargs'
+}
+
+android {
+    namespace 'com.nisum.pokedex'
+    compileSdk 32
+
+    defaultConfig {
+        applicationId "com.nisum.pokedex"
+        minSdk 21
+        targetSdk 32
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+
+    viewBinding {
+        enabled = true
+    }
+}
+
+dependencies {
+    implementation project(':domain')
+    implementation project(':data')
+    implementation libs.bundles.kotlin
+    implementation libs.bundles.lifecycle
+    //Glide
+    implementation libs.glide
+    kapt libs.glide.compiler
+    //dagger
+    implementation libs.dagger
+    kapt libs.dagger.compiler
+    implementation libs.fragment.ktx
+    implementation libs.hilt
+    implementation libs.navigatin.ui.ktx
+    implementation libs.appcompat
+    implementation libs.constraint
+}
